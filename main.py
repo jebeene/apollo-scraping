@@ -23,7 +23,7 @@ with pdfplumber.open(pdf_path) as pdf:
         print(f"Found {len(classes)} classes on page {page.page_number}.")
         # Add the classes to the list
         for match in matches:
-            course = match[0].strip()
+            course = match[0].replace(" ", "")
             title = match[1].strip()
             credit_hours = match[2].strip()
             credit_hours = credit_hours[0:-1]
